@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zvonimir Prpić - Frontend Developer - Personal Website - Extra Page">
+    <link rel="stylesheet" href="{{ "../style.css" | url }}">
+    <link rel="icon" type="image/x-icon" href="{{ "/assets/favicon/favicon-zp.png" | url }}">
+    <title>{{ documentTitle | safe }}</title>
+    {# <script src="{{ "../scripts/getCurrentTheme.js" | url }}" defer></script> #}
+
+</head>
+<body>
+<header>
+    <nav>
+        {# <button id="switch">x</button> #}
+        <ul>
+            <li><a href="{{ "/" | url }}">Home</a></li>
+            <li><a href="{{ "/extra" | url }}">Extra</a></li>
+        </ul>
+    </nav>
+</header>
+    <main>
+        <section>
+            <article>
+                <h2>About This Project</h2>
+                <p>This project was made out of <a href="{{ "curiosityLink" | url }}" target="_blank">technical curiosity</a>, <a href="{{ "businessLink" | url }}" target="_blank">business reasons</a> and <a href="{{ "skillLink" | url }}" target="_blank">skill demonstration</a>.</p>
+            </article>
+            <article>
+                <h2>About This (Extra) Page</h2>
+                <p>This page was specifically made to explore <a href="{{ "pageLink" | url }}">11ty's routing</a>.</p>
+            </article>
+        </section>
+        </main>
+        <footer>
+<footer>
+    <p class="footerText">{{ footer | safe }}</p>
+    <span class="footerAddendum">Made with <span class="heart">&#10084;</span> in Croatia</span>
+    </footer>
+</body>

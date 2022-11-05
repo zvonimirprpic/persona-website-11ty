@@ -1,0 +1,39 @@
+---
+documentTitle: 404 Page Not Found
+title: Sorry, page not found :(
+permalink: 404.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="404 Page Not Found" />
+    <link rel="stylesheet" href="{{ 'style.css' | url }}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ '/assets/favicon/favicon-zp.png' | url }}"
+    />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <main id="notFoundContainer">
+      <section>
+        <div class="headingContainer">
+          <h1>
+            4<img
+              class="heartIcon"
+              src="{{ '/assets/icons/brokenHeartIcon.svg'
+            | url }}"
+              alt="Broken Heart Icon."
+            />4
+          </h1>
+          <h2>{{ title }}</h2>
+        </div>
+        <a href="{{ '/' | url }}">Go back</a>
+      </section>
+    </main>
+  </body>
+</html>

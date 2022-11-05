@@ -1,0 +1,264 @@
+@import "dark.scss";
+@import "light.scss";
+@import "breakpoints.scss";
+
+@font-face {
+  font-family: "Nunito";
+  src: url("assets/fonts/Nunito-Regular.ttf");
+}
+
+:root {
+  --flare: #ffb6c1;
+}
+
+// TODO: Implement Dark/Light Theme. At the moment, only Dark theme is implemented. Below commented out CSS Rules are Dark/Light theme.
+
+/* body {
+  --text-color: var(--text-color-light);
+  --button-text-color: var(--button-text-color-light):
+  --background-color: var(--background-color-light);
+  --flare-filter: var(--flare-filter-light);
+}
+
+.dark {
+  --text-color: var(--text-color-dark);
+  --button-text-color: var(--button-text-color-dark):
+  --background-color: var(--background-color-dark);
+  --flare-filter: var(--flare-filter-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light) {
+    --text-color: var(--text-color-dark);
+    --button-text-color: var(--button-text-color-dark):
+    --background-color: var(--background-color-dark);
+    --flare-filter: var(--flare-filter-dark);
+  }
+} */
+
+body {
+  --text-color: var(--text-color-dark);
+  --button-text-color: var(--button-text-color-dark);
+  --button-background-color: var(--button-background-color-dark);
+  --background-color: var(--background-color-dark);
+  --flare-filter: var(--flare-filter-dark);
+} // Delete this Body CSS Rule-Set after Dark/Light theme has been implemented.
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  header {
+    nav {
+      ul {
+        li {
+          cursor: pointer;
+          list-style: none;
+          font-size: 1.2rem;
+          &::before {
+            content: "\2022";
+            color: var(--flare);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1em;
+          }
+          &:hover {
+            font-weight: 600;
+          }
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+  main {
+    section {
+      article {
+        p {
+          font-size: 1rem;
+          @media only screen and (min-device-width: $tablet) {
+            font-size: 1.25rem;
+          }
+        }
+        a {
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 600;
+          letter-spacing: 2px;
+          width: auto;
+          margin: 0 auto;
+          position: relative;
+          color: var(--flare);
+          @media only screen and (min-device-width: $tablet) {
+            font-size: 1.5rem;
+          }
+
+          &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--flare);
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+          &:hover:before {
+            visibility: visible;
+            width: 100%;
+            color: var(--flare);
+          }
+          &:visited {
+            color: var(--flare);
+          }
+        }
+      }
+      .textContainer {
+        text-align: center;
+        letter-spacing: 2px;
+        .animationContainer {
+          text-align: center;
+          h1 {
+            font-size: 1.25rem;
+            color: var(--flare);
+            @media only screen and (min-device-width: $tablet) {
+              font-size: 2.5rem;
+            }
+            @media only screen and (min-device-width: $desktop) {
+              font-size: 4rem;
+            }
+          }
+          h1:first-of-type {
+            color: var(--text-color);
+          }
+          h1:last-of-type {
+            animation: type 1s infinite;
+            color: var(--text-color);
+          }
+          @keyframes type {
+            to {
+              opacity: 0;
+            }
+          }
+        }
+        h3 {
+          font-size: 1rem;
+          @media only screen and (min-device-width: $tablet) {
+            font-size: 1.5rem;
+          }
+          @media only screen and (min-device-width: $desktop) {
+            font-size: 2rem;
+          }
+          span {
+            color: var(--flare);
+          }
+        }
+      }
+      .linksContainer {
+        a {
+          img {
+            color: var(--text-color);
+            cursor: pointer;
+          }
+        }
+        a {
+          &:active,
+          &:hover {
+            img {
+              -webkit-filter: var(--flare-filter);
+              filter: var(--flare-filter);
+              opacity: 0.85;
+            }
+          }
+        }
+      }
+      .buttonsContainer {
+        a {
+          text-decoration: none;
+          font-size: 1.25rem;
+          border-radius: 4px;
+          outline: 1px solid var(--flare);
+          background-color: var(--button-background-color);
+          color: var(--button-text-color);
+          text-align: center;
+          font-weight: 400;
+          /*           -webkit-box-shadow: 2px 2px 2px 0px rgba(102, 102, 102, 1);
+          -moz-box-shadow: 2px 2px 2px 0px rgba(102, 102, 102, 1);
+          box-shadow: 2px 2px 2px 0px rgba(102, 102, 102, 1); */
+          transition: all 0.2s;
+        }
+        a:focus {
+          scale: 0.98;
+        }
+        a:hover {
+          //opacity: 0.85;
+          font-weight: 800;
+          outline: 2px solid var(--flare);
+        }
+      }
+    }
+  }
+  footer {
+    p {
+      font-size: 1rem;
+      border-bottom: 1px solid var(--flare);
+    }
+    span {
+      font-size: 0.75rem;
+      .heart {
+        color: var(--flare);
+      }
+    }
+  }
+  #notFoundContainer {
+    .headingContainer {
+      h2 {
+        font-weight: 200;
+
+        margin-top: 32px;
+        text-align: center;
+        font-size: 2rem;
+        @media only screen and (min-device-width: $tablet) {
+          font-size: 3.5rem;
+          margin-top: 0px;
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      width: auto;
+      margin: 0 auto;
+      position: relative;
+      color: var(--flare);
+      span {
+        color: var(--text-color);
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--flare);
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover:before {
+        visibility: visible;
+        width: 100%;
+        color: var(--flare);
+      }
+      &:visited {
+        color: var(--flare);
+      }
+    }
+  }
+}
