@@ -7,5 +7,5 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy("src/assets/icons");
   eleventyConfig.addPassthroughCopy("src/assets/files");
   eleventyConfig.addPassthroughCopy("src/scripts");
-  return { dir: { input: "src", output: "dist" } };
+  return { dir: { input: "src", output: "_site" } };
 };
