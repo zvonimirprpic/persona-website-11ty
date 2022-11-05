@@ -10,12 +10,17 @@
 
   --medium-margin: 16px;
 }
+
+html {
+  height: -webkit-fill-available;
+}
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   width: 100%;
   padding: var(--small-padding);
   @media only screen and (min-device-width: $tablet) {
